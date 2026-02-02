@@ -5,7 +5,7 @@ import App from "./App";
 import { FavoritesProvider } from "./context/FavoritesContext";
 import "./styles/global.css";
 
-// Note to self: Provide favorites globally for all routes.
+// Note to self: Provide favorites globally 4 all routes.
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <BrowserRouter>
