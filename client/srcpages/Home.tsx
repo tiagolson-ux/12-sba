@@ -2,6 +2,7 @@ import { useFetch } from "../hooks/useFetch";
 import Spinner from "../components/Spinner";
 import ErrorMessage from "../components/ErrorMessage";
 import { Link } from "react-router-dom";
+import "../styles/page.css";
 
 type CategoriesResponse = {
   categories: { idCategory: string; strCategory: string; strCategoryThumb: string }[];
@@ -17,9 +18,9 @@ export default function Home() {
   if (error) return <ErrorMessage message={error} />;
 
   return (
-    <div style={{ padding: "2rem" }}>
-      <h1>Categories</h1>
-      <div style={{ display: "grid", gap: "1rem", gridTemplateColumns: "repeat(auto-fit, minmax(180px, 1fr))" }}>
+    <div className="page">
+      <h1 className="section-title">Categories</h1>
+      <div className="grid">
         {data?.categories.map((cat) => (
           <Link key={cat.idCategory} to={`/category/${cat.strCategory}`}>
             <img src={cat.strCategoryThumb} alt={cat.strCategory} />
